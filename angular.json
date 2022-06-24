@@ -23,6 +23,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -63,6 +65,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "sslKey":"./ssl/server.key",
+            "sslCert":"./ssl/server.crt",
+            "ssl":true,
             "production": {
               "browserTarget": "Client:build:production"
             },
@@ -90,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "2e6f1c13-5c02-4d10-9f9a-030c2568deef"
   }
 }
