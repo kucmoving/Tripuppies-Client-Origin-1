@@ -20,6 +20,8 @@ import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { TextInputComponent } from './_form/text-input/text-input.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { TextInputComponent } from './_form/text-input/text-input.component';
     PhotoEditorComponent,
     TextInputComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,9 @@ import { TextInputComponent } from './_form/text-input/text-input.component';
     MatTabsModule,
     NgxGalleryModule,
     ReactiveFormsModule,
+    TabsModule.forRoot(),
+    PaginationModule.forRoot()
+
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]
