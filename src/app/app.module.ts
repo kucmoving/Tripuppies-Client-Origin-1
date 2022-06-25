@@ -24,6 +24,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import {TimeagoModule} from 'ngx-timeago';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+
+
 
 
 
@@ -41,6 +44,8 @@ import {TimeagoModule} from 'ngx-timeago';
     MemberEditComponent,
     PhotoEditorComponent,
     TextInputComponent,
+    MemberMessagesComponent,
+
 
 
   ],

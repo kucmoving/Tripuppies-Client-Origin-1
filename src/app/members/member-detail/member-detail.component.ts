@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import { TabDirective } from 'ngx-bootstrap/tabs';
 import { Member } from 'src/app/_models/member';
 import { MembersService } from 'src/app/_service/members.service';
 
@@ -13,6 +14,8 @@ import { MembersService } from 'src/app/_service/members.service';
 
 })
 export class MemberDetailComponent implements OnInit {
+  @ViewChild('memberTabs')
+  activeTab: TabDirective
   member: Member;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
