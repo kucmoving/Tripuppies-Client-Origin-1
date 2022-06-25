@@ -22,6 +22,9 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { TextInputComponent } from './_form/text-input/text-input.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import {TimeagoModule} from 'ngx-timeago';
+
 
 
 @NgModule({
@@ -54,8 +57,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     NgxGalleryModule,
     ReactiveFormsModule,
     TabsModule.forRoot(),
-    PaginationModule.forRoot()
-
+    PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
+    TimeagoModule.forRoot()
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent]

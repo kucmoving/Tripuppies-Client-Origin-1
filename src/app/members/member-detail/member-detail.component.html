@@ -8,17 +8,23 @@
           <strong>Location:</strong>
           <p>{{member.city}}, {{member.country}}</p>
         </div>
+
         <div>
           <strong>Age:</strong>
           <p>{{member.age}}</p>
         </div>
-          <strong>Last Active:</strong>
-        <p>{{member.lastActive}}</p>
+
+        <div>
+        <strong>Last Active:</strong>
+        <p>{{member.lastActive | timeago}}</p>
+      </div>
+
         <div>
           <strong>Member since:</strong>
-          <p>{{member.created}}</p>
+          <p>{{member.created | date}}</p>
         </div>
-      </div>
+
+
       <div class="card-footer">
         <div class="btn-group d-flex">
           <button class="btn btn-primary">Like</button>
