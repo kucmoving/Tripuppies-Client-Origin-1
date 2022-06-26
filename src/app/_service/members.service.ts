@@ -9,6 +9,7 @@ import { UserParams } from '../_models/userParams';
 import { AccountService } from './account.service';
 import { take } from 'rxjs/operators';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
+import { Message } from '../_models/message';
 
 const httpOptions = {
   headers: new HttpHeaders({

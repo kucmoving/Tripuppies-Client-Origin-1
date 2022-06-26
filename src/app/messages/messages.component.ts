@@ -9,11 +9,12 @@ import { MessageService } from '../_service/message.service';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
-  messages: Message[];
+  messages: Message[] = [];
   pagination: Pagination;
   pageNumber = 1;
   pageSize = 5;
-  container = "Inbox";
+  container = "Unread";
+  loading = false;
 
   constructor(private messageService: MessageService) { }
 
@@ -22,10 +23,12 @@ export class MessagesComponent implements OnInit {
   }
 
   loadMessages(){
+    this.loading = true;
     this.messageService.getMessages(this.pageNumber, this.pageSize, this.container)
     .subscribe(response =>{
       this.messages =response.result;
       this.pagination = response.pagination;
+      this.loading = false;
     })
   }
 
@@ -36,4 +39,11 @@ export class MessagesComponent implements OnInit {
     }
 
   }
-}
+
+  deleteMessage(id: number) {
+    this.messageService.deleteMessage(id).subscribe(() => {
+          this.messages.splice(this.messages.findIndex(m => m.id === id), 1);
+        })
+      }
+    }
+
